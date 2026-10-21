@@ -1,0 +1,36 @@
+# Zynverix
+
+> Zynverix is a remote agency of three partners (Ahsan Khalid, Zain Ishaq, Ali Maan) based in Pakistan, serving US small businesses. We reply to new leads within a minute, 24/7, and follow up until they book or decline. We also run Facebook and Instagram ads, build websites, and manage social media. We focus on real estate agents and home service businesses (roofing, HVAC, plumbing, remodeling).
+
+Key facts:
+- Core service: speed-to-lead automation (instant replies, qualification, booking, follow-up, CRM pipeline, weekly reporting).
+- Clients can buy a single service; an automation-only option exists for businesses that already get leads.
+- We do not guarantee sales, revenue, leads, or ROI. We commit to reply speed, follow-up consistency, qualification, and tracking.
+- Automated texts are only sent where the lead has given the required consent (TCPA).
+- Free 15-minute lead-response audit. Contact: info@zynverix.com
+- We are a new agency and do not publish case studies we cannot back up.
+
+## Services
+- [Speed to Lead](https://zynverix.com/services/speed-to-lead/): Every new lead gets a response within a minute, 24/7, so no enquiry sits waiting while you're busy.
+- [Lead Qualification](https://zynverix.com/services/lead-qualification/): A few short questions sort every enquiry into hot, warm, or cold, so you know who to call first.
+- [Appointment Booking & Reminders](https://zynverix.com/services/appointment-booking-reminders/): Ready leads can book an appointment themselves, and reminders help reduce missed appointments.
+- [Automated Lead Follow-Up](https://zynverix.com/services/lead-follow-up/): Consistent follow-up for leads who aren't ready yet, until they book, decline, or opt out.
+- [CRM Pipeline Setup](https://zynverix.com/services/crm-setup/): A clear board showing every lead and exactly where it stands.
+- [Weekly Lead Reporting](https://zynverix.com/services/lead-reporting/): A simple weekly view of leads received, reply speed, and bookings.
+- [Facebook & Instagram Ads](https://zynverix.com/services/facebook-instagram-ads/): Facebook and Instagram ads, ad copy, and landing pages that help bring in enquiries.
+- [Website Design](https://zynverix.com/services/web-design/): New websites and rebuilds focused on clarity, credibility, and making it easy to enquire.
+- [Social Media Management](https://zynverix.com/services/social-media-management/): An organized, consistent social media presence, without you having to post every day.
+- [Full-Stack Marketing](https://zynverix.com/services/digital-marketing/): Your whole marketing stack, handled by one team: strategy, ads, website, social media, and lead follow-up, coordinated in one plan.
+
+## Industries
+- [Real Estate](https://zynverix.com/industries/real-estate/): Buyers and sellers often contact several agents at once. We help you reply within a minute, qualify by timeline, book showings and listing appointments, and follow up with people who need more time.
+- [Roofing](https://zynverix.com/industries/roofing/): Roofing enquiries arrive while your crews are on jobs. We help you reply within a minute, sort urgent leaks from planned replacements, book inspections, and follow up on estimates.
+- [HVAC](https://zynverix.com/industries/hvac/): When a system breaks, customers want an answer fast. We help HVAC companies reply to every enquiry within a minute, sort emergencies from tune-ups, book service visits, and follow up on replacement quotes.
+- [Plumbing](https://zynverix.com/industries/plumbing/): Most plumbing customers need help now. We build plumbing websites that make it easy to get in touch, and set up instant replies so every enquiry gets a response within a minute, day or night.
+- [Contractors & Remodelers](https://zynverix.com/industries/contractors/): Remodeling projects take time to decide. We help contractors reply to quote requests within a minute, qualify by project type and budget, book estimates, and follow up for weeks or months if needed.
+
+## Company
+- [About](https://zynverix.com/about/): who we are and how we work
+- [Team](https://zynverix.com/team/): the three partners
+- [Contact](https://zynverix.com/contact/): message form, email, free audit
+- [Privacy Policy](https://zynverix.com/privacy/)

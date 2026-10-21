@@ -1,0 +1,27 @@
+# Netlify / Cloudflare Pages: 301 redirects
+http://zynverix.com/*  https://zynverix.com/:splat  301!
+http://www.zynverix.com/*  https://zynverix.com/:splat  301!
+https://www.zynverix.com/*  https://zynverix.com/:splat  301!
+/about.html  /about/  301
+/team.html  /team/  301
+/projects.html  /projects/  301
+/contact.html  /contact/  301
+/services.html  /services/  301
+/privacy.html  /privacy/  301
+/terms.html  /terms/  301
+/thank-you.html  /thank-you/  301
+/services/instant-reply.html  /services/speed-to-lead/  301
+/services/lead-qualification.html  /services/lead-qualification/  301
+/services/booking-reminders.html  /services/appointment-booking-reminders/  301
+/services/automated-follow-up.html  /services/lead-follow-up/  301
+/services/crm-pipeline.html  /services/crm-setup/  301
+/services/weekly-reporting.html  /services/lead-reporting/  301
+/services/lead-generation.html  /services/facebook-instagram-ads/  301
+/services/web-development.html  /services/web-design/  301
+/services/social-media-management.html  /services/social-media-management/  301
+/services/complete-marketing.html  /services/digital-marketing/  301
+/services/instant-reply/  /services/speed-to-lead/  301
+/services/complete-marketing/  /services/digital-marketing/  301
+/services/full-stack-marketing/  /services/digital-marketing/  301
+/who-we-help/  /industries/  301
+/index.html  /  301

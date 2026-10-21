@@ -1,0 +1,35 @@
+# Apache / cPanel hosting: HTTPS, non-www, clean URLs, 301 redirects, custom 404
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://zynverix.com/$1 [R=301,L]
+Redirect 301 /about.html https://zynverix.com/about/
+Redirect 301 /team.html https://zynverix.com/team/
+Redirect 301 /projects.html https://zynverix.com/projects/
+Redirect 301 /contact.html https://zynverix.com/contact/
+Redirect 301 /services.html https://zynverix.com/services/
+Redirect 301 /privacy.html https://zynverix.com/privacy/
+Redirect 301 /terms.html https://zynverix.com/terms/
+Redirect 301 /thank-you.html https://zynverix.com/thank-you/
+Redirect 301 /services/instant-reply.html https://zynverix.com/services/speed-to-lead/
+Redirect 301 /services/lead-qualification.html https://zynverix.com/services/lead-qualification/
+Redirect 301 /services/booking-reminders.html https://zynverix.com/services/appointment-booking-reminders/
+Redirect 301 /services/automated-follow-up.html https://zynverix.com/services/lead-follow-up/
+Redirect 301 /services/crm-pipeline.html https://zynverix.com/services/crm-setup/
+Redirect 301 /services/weekly-reporting.html https://zynverix.com/services/lead-reporting/
+Redirect 301 /services/lead-generation.html https://zynverix.com/services/facebook-instagram-ads/
+Redirect 301 /services/web-development.html https://zynverix.com/services/web-design/
+Redirect 301 /services/social-media-management.html https://zynverix.com/services/social-media-management/
+Redirect 301 /services/complete-marketing.html https://zynverix.com/services/digital-marketing/
+RedirectMatch 301 ^/services/instant-reply/$ https://zynverix.com/services/speed-to-lead/
+RedirectMatch 301 ^/services/complete-marketing/$ https://zynverix.com/services/digital-marketing/
+RedirectMatch 301 ^/services/full-stack-marketing/$ https://zynverix.com/services/digital-marketing/
+RedirectMatch 301 ^/who-we-help/$ https://zynverix.com/industries/
+ErrorDocument 404 /404.html
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
