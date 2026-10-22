@@ -1227,3 +1227,20 @@ section:has(.faq) .faq details:hover .ans p { color: #334155; }
 section:has(.faq) .faq details:hover .tog { background: var(--blue-50); border-color: #BFDBFE; color: var(--blue-600); }
 section:has(.faq) .faq details[open]:hover .tog { background: var(--blue); border-color: var(--blue); color: #fff; }
 section:has(.faq) .faq summary:focus-visible { outline-color: var(--cyan); }
+
+/* ---- Demo pages ---- */
+.demo-ribbon { position: relative; z-index: 40; background: #FEF3C7; color: #78350F; border-bottom: 1px solid #FCD34D; text-align: center; font-size: 14px; padding: 10px max(16px, env(safe-area-inset-left, 0px)); margin-top: 96px; }
+.demo-ribbon strong { background: #B45309; color: #fff; padding: 2px 8px; border-radius: 6px; margin-right: 6px; letter-spacing: .06em; }
+.demo-ribbon + .page-hero { padding-top: 64px; }
+@media (max-width: 520px) { .demo-ribbon { margin-top: 82px; font-size: 13px; } }
+.listing-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.listing-facts span { display: flex; flex-direction: column; padding: 10px 16px; border-radius: 12px; background: rgba(255,255,255,.05); border: 1px solid var(--line-dark); color: var(--muted-dark); font-size: 12.5px; }
+.listing-facts b { color: #fff; font-size: 20px; font-weight: 750; }
+.listing-card { margin: 0; border-radius: 22px; overflow: hidden; border: 1px solid var(--line-dark); box-shadow: var(--shadow-lg); background: #0F1828; }
+.listing-card svg { display: block; width: 100%; height: auto; }
+.listing-card figcaption { display: flex; align-items: center; gap: 10px; padding: 12px 16px; font-size: 13px; color: var(--muted-dark); }
+.demo-steps b { color: #fff; }
+.c-card.featured .next-steps { color: #CBD5E1; }
+#demo-lead-form [aria-invalid="true"] { border-color: #DC2626; }
+.demo-ribbon { box-shadow: 0 -96px 0 0 #0B1220; }
+@media (max-width: 520px) { .demo-ribbon { box-shadow: 0 -82px 0 0 #0B1220; } }
