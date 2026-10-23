@@ -22,6 +22,24 @@
   });
 
   // ---- Company LinkedIn: show only when configured
+  // ---- Testimonials: render only real entries from config; otherwise the section stays hidden
+  (function () {
+    var sec = document.querySelector("[data-testimonials]"), list = sec && sec.querySelector("[data-testi-list]");
+    var items = (cfg.testimonials || []).filter(function (t) { return t && t.quote && t.name; });
+    if (!sec || !list || !items.length) return;
+    items.forEach(function (t) {
+      var li = document.createElement("li"); li.className = "testi";
+      var q = document.createElement("blockquote"); q.textContent = "\u201C" + t.quote + "\u201D";
+      var who = document.createElement("div"); who.className = "testi-who";
+      if (t.photo) { var im = document.createElement("img"); im.src = t.photo; im.alt = "Photo of " + t.name; im.width = 56; im.height = 56; im.loading = "lazy"; who.appendChild(im); }
+      else { var ini = document.createElement("span"); ini.className = "testi-ini"; ini.setAttribute("aria-hidden", "true"); ini.textContent = t.name.trim().charAt(0).toUpperCase(); who.appendChild(ini); }
+      var meta = document.createElement("div"), nm = document.createElement("b"), rl = document.createElement("span");
+      nm.textContent = t.name; rl.textContent = [t.role, t.company].filter(Boolean).join(", ");
+      meta.appendChild(nm); meta.appendChild(rl); who.appendChild(meta);
+      li.appendChild(q); li.appendChild(who); list.appendChild(li);
+    });
+    sec.hidden = false;
+  })();
   document.querySelectorAll("[data-social-linkedin]").forEach(function (a) {
     if (isHttps(cfg.linkedinUrl)) { a.href = cfg.linkedinUrl; a.hidden = false; } else { a.hidden = true; }
   });

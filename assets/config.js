@@ -18,6 +18,11 @@
  *
  * team         Optional photo and LinkedIn for each partner. Put photos in assets/team/
  *              e.g. photo: "assets/team/ash.jpg". While empty, initials are shown and the LinkedIn button is hidden.
+ * testimonials Real client testimonials for the homepage. The section stays hidden while this list is empty.
+ *              ONLY add a quote from a real client, word for word, with their written permission to publish it.
+ *              Never write, edit the meaning of, or invent a testimonial (FTC rules on fake reviews).
+ *              Example: { quote: "…their exact words…", name: "Jane Doe", role: "Realtor", company: "Doe Realty", photo: "" }
+ *              photo is optional, e.g. "assets/testimonials/jane.webp".
  * demos        Paste a video URL (MP4, or a YouTube/Loom/Vimeo embed URL) to replace a
  *              "coming soon" placeholder with the real video.
  */
@@ -36,6 +41,8 @@ window.ZYNVERIX_CONFIG = {
     zack:    { photo: "assets/team/zack.webp", linkedin: "" },
     michael: { photo: "assets/team/michael.webp", linkedin: "" }
   },
+
+  testimonials: [],
 
   demos: {
     instantResponse: "",   // homepage Demo 01

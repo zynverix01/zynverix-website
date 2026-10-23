@@ -1257,3 +1257,14 @@ section:has(.faq) .faq summary:focus-visible { outline-color: var(--cyan); }
 .socials.on-light .soc { color: #334155; background: #fff; border-color: #CBD5E1; }
 .socials.on-light .soc:hover, .socials.on-light .soc:focus-visible { color: #fff; background: #2563EB; border-color: #2563EB; }
 .site-footer .fa-brands { margin-right: 8px; width: 1.1em; text-align: center; }
+
+/* Testimonials (shown only when real quotes are added in config.js) */
+.testi-grid { list-style: none; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 36px; }
+.testi { position: relative; padding: 30px 26px 24px; border-radius: 20px; background: rgba(14,28,62,.72); border: 1px solid rgba(86,230,255,.22); box-shadow: 0 30px 60px -30px rgba(2,6,23,.8); }
+.testi::before { content: "\201C"; position: absolute; top: -18px; left: 22px; font-size: 72px; line-height: 1; font-weight: 800; color: #56E6FF; opacity: .6; }
+.testi blockquote { margin: 0; color: #E2E8F0; font-size: 17px; line-height: 1.6; }
+.testi-who { display: flex; align-items: center; gap: 14px; margin-top: 22px; }
+.testi-who img, .testi-ini { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex: none; }
+.testi-ini { display: grid; place-items: center; font-weight: 800; color: #fff; background: linear-gradient(135deg, #2563EB, #0891B2); }
+.testi-who b { display: block; color: #fff; }
+.testi-who span { color: #94A3B8; font-size: 14px; }
