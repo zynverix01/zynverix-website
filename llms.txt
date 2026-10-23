@@ -1,6 +1,6 @@
 # Zynverix
 
-> Zynverix is a remote agency of three partners (Ahsan Khalid, Zain Ishaq, Ali Maan) based in Pakistan, serving US businesses. We reply to new leads within a minute, 24/7, and follow up until they book or decline. We also run Facebook and Instagram ads, build websites, and manage social media. We focus on real estate agents and home service businesses (roofing, HVAC, plumbing, remodeling).
+> Zynverix is an agency of three directors (Ahsan Khalid, Zain Ishaq, Ali Maan) serving US businesses. We reply to new leads within a minute, 24/7, and follow up until they book or decline. We also run Facebook and Instagram ads, build websites, and manage social media. We focus on real estate agents and home service businesses (roofing, HVAC, plumbing, remodeling).
 
 Key facts:
 - Core service: speed-to-lead automation (instant replies, qualification, booking, follow-up, CRM pipeline, weekly reporting).
