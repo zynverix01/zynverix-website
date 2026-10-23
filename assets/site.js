@@ -22,6 +22,9 @@
   });
 
   // ---- Company LinkedIn: show only when configured
+  document.querySelectorAll("[data-social-linkedin]").forEach(function (a) {
+    if (isHttps(cfg.linkedinUrl)) { a.href = cfg.linkedinUrl; a.hidden = false; } else { a.hidden = true; }
+  });
   document.querySelectorAll("[data-linkedin]").forEach(function (el) {
     var a = el.tagName === "A" ? el : el.querySelector("a");
     if (isHttps(cfg.linkedinUrl)) { a.href = cfg.linkedinUrl; el.hidden = false; } else { el.hidden = true; }
