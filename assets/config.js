@@ -27,7 +27,7 @@
  *              "coming soon" placeholder with the real video.
  */
 window.ZYNVERIX_CONFIG = {
-  bookingUrl: "",
+  bookingUrl: "https://calendly.com/zynverix01/30min",
   linkedinUrl: "https://www.linkedin.com/company/zynverixsystems/",
   email: "info@zynverix.com",
   setupTime: "",
