@@ -28,7 +28,7 @@
  */
 window.ZYNVERIX_CONFIG = {
   bookingUrl: "",
-  linkedinUrl: "",
+  linkedinUrl: "https://www.linkedin.com/company/zynverixsystems/",
   email: "info@zynverix.com",
   setupTime: "",
 
