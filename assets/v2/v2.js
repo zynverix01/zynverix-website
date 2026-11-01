@@ -100,7 +100,7 @@
     if (!track || !N) return;
     var seg = p * (N - 1), i = Math.min(N - 2, Math.floor(seg)), t = seg - i;
     if (p >= 1) { i = N - 2; t = 1; }
-    var z = ease(clamp((t - 0.3) / 0.7, 0, 1));             // hold each scene, then zoom
+    var z = ease(clamp((t - 0.12) / 0.88, 0, 1));             // hold each scene, then zoom
     var cur = scenes[i], nxt = scenes[i + 1];
     var fx = cur.getAttribute("data-fx"), fy = cur.getAttribute("data-fy"), K = 4.6;
     for (var j = 0; j < N; j++) if (j !== i && j !== i + 1 && scenes[j].style.visibility !== "hidden") { scenes[j].style.opacity = 0; scenes[j].style.visibility = "hidden"; }
@@ -120,7 +120,7 @@
     var target = ztTarget();
     if (ztP < 0) ztP = target;
     var d = target - ztP;
-    ztP = Math.abs(d) < 0.0004 ? target : ztP + d * (snapping ? 0.2 : 0.14);    // eased follow
+    ztP = Math.abs(d) < 0.0004 ? target : ztP + d * (snapping ? 0.2 : 0.09);    // eased follow
     ztRender(ztP);
     ztRaf = ztP === target ? 0 : requestAnimationFrame(ztLoop);
   }
@@ -159,7 +159,7 @@
     var base = dir > 0 ? Math.floor(p + 0.02) : Math.ceil(p - 0.02);
     ztGo(base + dir);
   }
-  if (track && N) {
+  if (false) {   // step-per-swipe turned off: continuous smooth zoom instead
     window.addEventListener("wheel", function (e) {
       if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
       var dir = e.deltaY > 0 ? 1 : -1, now = performance.now(), gap = now - lastWheel;
