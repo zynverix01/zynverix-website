@@ -68,6 +68,8 @@
     titleEl = zt.querySelector(".zt-title"); countEl = zt.querySelector(".zt-count"); descEl = zt.querySelector(".zt-desc"); hint = zt.querySelector(".zt-hint");
     var dotWrap = zt.querySelector(".zt-dots");
     scenes.forEach(function (s, i) {
+      // full-screen cover: pin each image's portal to the same spot on any screen shape
+      var im = s.querySelector("img"); if (im) im.style.objectPosition = s.getAttribute("data-fx") + "% " + s.getAttribute("data-fy") + "%";
       var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Go to " + s.getAttribute("data-title"));
       b.addEventListener("click", function () { window.scrollTo({ top: ztTop + (i / Math.max(1, N - 1)) * ztLen + 2, behavior: "smooth" }); });
       dotWrap.appendChild(b); dots.push(b);
