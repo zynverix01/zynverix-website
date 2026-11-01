@@ -71,7 +71,7 @@
       // full-screen cover: pin each image's portal to the same spot on any screen shape
       var im = s.querySelector("img"); if (im) im.style.objectPosition = s.getAttribute("data-fx") + "% " + s.getAttribute("data-fy") + "%";
       var b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Go to " + s.getAttribute("data-title"));
-      b.addEventListener("click", function () { window.scrollTo({ top: ztTop + (i / Math.max(1, N - 1)) * ztLen + 2, behavior: "smooth" }); });
+      b.addEventListener("click", function () { ztGo(i); });
       dotWrap.appendChild(b); dots.push(b);
     });
     track.style.height = (N * 95) + "svh";
@@ -120,11 +120,79 @@
     var target = ztTarget();
     if (ztP < 0) ztP = target;
     var d = target - ztP;
-    ztP = Math.abs(d) < 0.0004 ? target : ztP + d * 0.14;    // eased follow
+    ztP = Math.abs(d) < 0.0004 ? target : ztP + d * (snapping ? 0.2 : 0.14);    // eased follow
     ztRender(ztP);
     ztRaf = ztP === target ? 0 : requestAnimationFrame(ztLoop);
   }
   function ztKick() { if (track && N && !ztRaf) ztRaf = requestAnimationFrame(ztLoop); }
+
+  /* ---- one swipe = one service: wheel / trackpad / touch step through the scenes ---- */
+  var snapping = false, gestureUsed = false, lastWheel = 0, lastInput = 0, prevY = window.scrollY, ztIdx = 0;
+  var easeIO = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+  function idxY(i) { return Math.round(ztTop + (i / Math.max(1, N - 1)) * ztLen); }
+  function nearestIdx() { return clamp(Math.round(clamp((window.scrollY - ztTop) / ztLen, 0, 1) * (N - 1)), 0, N - 1); }
+  function ztGo(i) {
+    if (!track || !N) return;
+    i = clamp(i, 0, N - 1); ztIdx = i;
+    var from = window.scrollY, to = idxY(i), dist = to - from;
+    if (Math.abs(dist) < 2) return;
+    var dur = clamp(700 + Math.abs(dist) * 0.25, 900, 1600), t0 = performance.now();
+    snapping = true;
+    (function step(now) {
+      var k = clamp((now - t0) / dur, 0, 1);
+      window.scrollTo({ top: from + dist * easeIO(k), behavior: "instant" });
+      if (k < 1) requestAnimationFrame(step); else { snapping = false; prevY = window.scrollY; }
+    })(t0);
+  }
+  // inside the pinned stage? (leaving past the first or last service scrolls the page normally)
+  function inZone(dir) {
+    if (!track || !N) return false;
+    var y = window.scrollY;
+    if (y < ztTop - 2 || y > ztTop + ztLen + 2) return false;
+    var i = nearestIdx();
+    if (dir > 0 && i >= N - 1 && y >= idxY(N - 1) - 2) return false;
+    if (dir < 0 && i <= 0 && y <= ztTop + 2) return false;
+    return true;
+  }
+  function stepFrom(dir) {
+    var p = clamp((window.scrollY - ztTop) / ztLen, 0, 1) * (N - 1);
+    var base = dir > 0 ? Math.floor(p + 0.02) : Math.ceil(p - 0.02);
+    ztGo(base + dir);
+  }
+  if (track && N) {
+    window.addEventListener("wheel", function (e) {
+      if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      var dir = e.deltaY > 0 ? 1 : -1, now = performance.now(), gap = now - lastWheel;
+      lastWheel = lastInput = now;
+      if (gap > 260) gestureUsed = false;               // a new swipe starts after a short pause
+      if (!snapping && !inZone(dir)) return;            // normal page scrolling outside the services
+      e.preventDefault();
+      if (snapping || gestureUsed || Math.abs(e.deltaY) < 3) return;
+      gestureUsed = true; stepFrom(dir);
+    }, { passive: false });
+
+    var tY = null, tUsed = false;
+    window.addEventListener("touchstart", function (e) { tY = e.touches[0].clientY; tUsed = false; lastInput = performance.now(); }, { passive: true });
+    window.addEventListener("touchmove", function (e) {
+      if (tY === null) return;
+      var dy = tY - e.touches[0].clientY, dir = dy > 0 ? 1 : -1;
+      lastInput = performance.now();
+      if (!snapping && !inZone(dir)) return;
+      e.preventDefault();
+      if (!snapping && !tUsed && Math.abs(dy) > 28) { tUsed = true; stepFrom(dir); }
+    }, { passive: false });
+    window.addEventListener("touchend", function () { tY = null; }, { passive: true });
+
+    // a fast fling from above or below lands on the first / last service instead of skipping in
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY, recent = performance.now() - lastInput < 400;
+      if (!snapping && recent) {
+        if (prevY < ztTop - 1 && y > ztTop + 1) { window.scrollTo({ top: ztTop, behavior: "instant" }); gestureUsed = true; y = ztTop; }
+        else if (prevY > ztTop + ztLen + 1 && y < ztTop + ztLen - 1) { window.scrollTo({ top: ztTop + ztLen, behavior: "instant" }); gestureUsed = true; y = ztTop + ztLen; }
+      }
+      prevY = y;
+    }, { passive: true });
+  }
   // decode every scene up front so nothing pops in mid-zoom
   scenes.forEach(function (s) { var im = s.querySelector("img"); if (im) { im.loading = "eager"; if (im.decode) im.decode().catch(function () {}); } });
 
