@@ -1314,3 +1314,5 @@ body{background:#EAF6FB}
 @media (min-width:1000px){.steps.steps-5{grid-template-columns:repeat(5,1fr)}}
 @media (max-width:640px){.svc-pn{grid-template-columns:1fr}.svc-pn .next{text-align:left}}
 .svc-group .rel-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.footer-top .socials a.soc,.socials a.soc{display:inline-flex;align-items:center;justify-content:center;gap:0;padding:0}
+.soc svg{margin:0}
