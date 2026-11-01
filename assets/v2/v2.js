@@ -60,12 +60,12 @@
 
   /* ---- services zoom-through ---- */
   var zt = document.querySelector("[data-zt]"), scenes = [], track, ztTop = 0, ztLen = 1, N = 0, curShown = -1;
-  var titleEl, countEl, descEl, dots = [], hint;
+  var titleEl, countEl, descEl, moreEl, dots = [], hint;
   if (zt && !reduce) {
     track = zt.querySelector(".zt-track");
     scenes = Array.prototype.slice.call(zt.querySelectorAll(".zt-scene"));
     N = scenes.length;
-    titleEl = zt.querySelector(".zt-title"); countEl = zt.querySelector(".zt-count"); descEl = zt.querySelector(".zt-desc"); hint = zt.querySelector(".zt-hint");
+    titleEl = zt.querySelector(".zt-title"); moreEl = zt.querySelector(".zt-more"); countEl = zt.querySelector(".zt-count"); descEl = zt.querySelector(".zt-desc"); hint = zt.querySelector(".zt-hint");
     var dotWrap = zt.querySelector(".zt-dots");
     scenes.forEach(function (s, i) {
       // full-screen cover: pin each image's portal to the same spot on any screen shape
@@ -87,34 +87,46 @@
     var s = scenes[i];
     [titleEl, descEl].forEach(function (el) { el.classList.add("zt-swap"); });
     setTimeout(function () {
-      titleEl.textContent = s.getAttribute("data-title"); descEl.textContent = s.getAttribute("data-desc");
+      titleEl.textContent = s.getAttribute("data-title"); descEl.textContent = s.getAttribute("data-desc"); if (moreEl && s.getAttribute("data-href")) moreEl.href = s.getAttribute("data-href");
       countEl.textContent = (i < 9 ? "0" : "") + (i + 1) + " / " + (N < 10 ? "0" : "") + N;
       [titleEl, descEl].forEach(function (el) { el.classList.remove("zt-swap"); });
     }, 160);
     dots.forEach(function (d, j) { d.classList.toggle("on", j === i); });
   }
-  function ztRender() {
+  // Smoothing: the zoom chases the scroll position instead of jumping with each wheel step.
+  var ztP = -1;
+  function ztTarget() { return clamp((window.scrollY - ztTop) / ztLen, 0, 1); }
+  function ztRender(p) {
     if (!track || !N) return;
-    var p = clamp((window.scrollY - ztTop) / ztLen, 0, 1);
     var seg = p * (N - 1), i = Math.min(N - 2, Math.floor(seg)), t = seg - i;
     if (p >= 1) { i = N - 2; t = 1; }
-    var z = ease(clamp((t - 0.32) / 0.68, 0, 1));          // hold each scene, then zoom
+    var z = ease(clamp((t - 0.3) / 0.7, 0, 1));             // hold each scene, then zoom
     var cur = scenes[i], nxt = scenes[i + 1];
     var fx = cur.getAttribute("data-fx"), fy = cur.getAttribute("data-fy"), K = 4.6;
-    scenes.forEach(function (s, j) { if (j !== i && j !== i + 1) { s.style.opacity = 0; s.style.visibility = "hidden"; } });
+    for (var j = 0; j < N; j++) if (j !== i && j !== i + 1 && scenes[j].style.visibility !== "hidden") { scenes[j].style.opacity = 0; scenes[j].style.visibility = "hidden"; }
     cur.style.visibility = "visible"; nxt.style.visibility = "visible";
-    cur.style.transformOrigin = fx + "% " + fy + "%";
-    cur.style.transform = "scale(" + (1 + (K - 1) * z) + ")";
-    cur.style.opacity = 1 - smooth(0.55, 0.95, z);
+    cur.style.transformOrigin = nxt.style.transformOrigin = fx + "% " + fy + "%";
+    cur.style.transform = "translate3d(0,0,0) scale(" + (1 + (K - 1) * z).toFixed(4) + ")";
+    cur.style.opacity = (1 - smooth(0.5, 0.92, z)).toFixed(3);
     cur.style.zIndex = 1;
-    nxt.style.transformOrigin = fx + "% " + fy + "%";
-    nxt.style.transform = "scale(" + (0.21 + 0.79 * z) + ")";
-    nxt.style.opacity = smooth(0.02, 0.3, z);
+    nxt.style.transform = "translate3d(0,0,0) scale(" + (0.21 + 0.79 * z).toFixed(4) + ")";
+    nxt.style.opacity = smooth(0, 0.22, z).toFixed(3);
     nxt.style.zIndex = 2;
-    nxt.style.borderRadius = (1 - z) * 18 + "px"; nxt.style.overflow = "hidden";
     setText(z < 0.5 ? i : i + 1);
     if (hint) hint.style.opacity = p > 0.97 ? 0 : 1;
   }
+  var ztRaf = 0;
+  function ztLoop() {
+    var target = ztTarget();
+    if (ztP < 0) ztP = target;
+    var d = target - ztP;
+    ztP = Math.abs(d) < 0.0004 ? target : ztP + d * 0.14;    // eased follow
+    ztRender(ztP);
+    ztRaf = ztP === target ? 0 : requestAnimationFrame(ztLoop);
+  }
+  function ztKick() { if (track && N && !ztRaf) ztRaf = requestAnimationFrame(ztLoop); }
+  // decode every scene up front so nothing pops in mid-zoom
+  scenes.forEach(function (s) { var im = s.querySelector("img"); if (im) { im.loading = "eager"; if (im.decode) im.decode().catch(function () {}); } });
 
   var ticking = false;
   function onScroll() {
@@ -130,7 +142,7 @@
         fb.style.opacity = Math.max(faded, end);
         fb.classList.toggle("is-lit", p > 0.25);
       }
-      ztRender();
+      ztKick();
     });
   }
   window.addEventListener("scroll", onScroll, { passive: true });

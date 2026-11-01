@@ -1,36 +1,31 @@
 # Zynverix
 
-> Zynverix is an agency of three directors (Ahsan Khalid, Zain Ishaq, Ali Maan) serving US businesses. We reply to new leads within a minute, 24/7, and follow up until they book or decline. We also run Facebook and Instagram ads, build websites, and manage social media. We focus on real estate agents and home service businesses (roofing, HVAC, plumbing, remodeling).
+> Zynverix is an agency of three directors (Ahsan Khalid, Zain Ishaq, Ali Maan), working remotely from Pakistan with real estate agents, teams and small brokerages in the United States. We reply to every new buyer and seller lead within a minute, 24/7, sort it hot, warm or cold, and follow up until they book a showing or decline. We also run social media, video editing, Facebook and Instagram ads, websites and AI chatbots for agents.
 
 Key facts:
-- Core service: speed-to-lead automation (instant replies, qualification, booking, follow-up, CRM pipeline, weekly reporting).
-- Clients can buy a single service; an automation-only option exists for businesses that already get leads.
+- Focus: real estate agents and teams in the United States only.
+- Clients can buy a single service; most start with lead management.
 - We do not guarantee sales, revenue, leads, or ROI. We commit to reply speed, follow-up consistency, qualification, and tracking.
 - Automated texts are only sent where the lead has given the required consent (TCPA).
-- Free 15-minute lead-response audit. Contact: info@zynverix.com
-- We are a new agency and do not publish case studies we cannot back up.
+- Free 15-minute audit. Contact: info@zynverix.com
 
 ## Services
-- [Speed to Lead](https://zynverix.com/services/speed-to-lead/): Every new lead gets a response within a minute, 24/7, so no enquiry sits waiting while you're busy.
-- [Lead Qualification](https://zynverix.com/services/lead-qualification/): A few short questions sort every enquiry into hot, warm, or cold, so you know who to call first.
-- [Appointment Booking & Reminders](https://zynverix.com/services/appointment-booking-reminders/): Ready leads can book an appointment themselves, and reminders help reduce missed appointments.
-- [Automated Lead Follow-Up](https://zynverix.com/services/lead-follow-up/): Consistent follow-up for leads who aren't ready yet, until they book, decline, or opt out.
-- [CRM Pipeline Setup](https://zynverix.com/services/crm-setup/): A clear board showing every lead and exactly where it stands.
-- [Weekly Lead Reporting](https://zynverix.com/services/lead-reporting/): A simple weekly view of leads received, reply speed, and bookings.
-- [Facebook & Instagram Ads](https://zynverix.com/services/facebook-instagram-ads/): Facebook and Instagram ads, ad copy, and landing pages that help bring in enquiries.
-- [Website Design](https://zynverix.com/services/web-design/): New websites and rebuilds focused on clarity, credibility, and making it easy to enquire.
-- [Social Media Management](https://zynverix.com/services/social-media-management/): An organized, consistent social media presence, without you having to post every day.
-- [Full-Stack Marketing](https://zynverix.com/services/digital-marketing/): Your whole marketing stack, handled by one team: strategy, ads, website, social media, and lead follow-up, coordinated in one plan.
-
-## Industries
-- [Real Estate](https://zynverix.com/industries/real-estate/): Buyers and sellers often contact several agents at once. We help you reply within a minute, qualify by timeline, book showings and listing appointments, and follow up with people who need more time.
-- [Roofing](https://zynverix.com/industries/roofing/): Roofing enquiries arrive while your crews are on jobs. We help you reply within a minute, sort urgent leaks from planned replacements, book inspections, and follow up on estimates.
-- [HVAC](https://zynverix.com/industries/hvac/): When a system breaks, customers want an answer fast. We help HVAC companies reply to every enquiry within a minute, sort emergencies from tune-ups, book service visits, and follow up on replacement quotes.
-- [Plumbing](https://zynverix.com/industries/plumbing/): Most plumbing customers need help now. We build plumbing websites that make it easy to get in touch, and set up instant replies so every enquiry gets a response within a minute, day or night.
-- [Contractors & Remodelers](https://zynverix.com/industries/contractors/): Remodeling projects take time to decide. We help contractors reply to quote requests within a minute, qualify by project type and budget, book estimates, and follow up for weeks or months if needed.
+- [Social Media Marketing](https://zynverix.com/services/social-media-marketing/): A content plan, listing posts, carousels, captions, scheduling and page management for real estate agents and teams on Instagram and Facebook.
+- [Video Editing](https://zynverix.com/services/video-editing/): Reels, listing tour videos and agent intro videos edited from your footage, with captions, music and your branding, ready to post.
+- [Facebook & Instagram Ads](https://zynverix.com/services/facebook-instagram-ads/): Facebook and Instagram ad campaigns for real estate agents: listing ads, buyer and seller lead campaigns, creatives, copy and targeting, connected to instant follow-up.
+- [Website Design & Development](https://zynverix.com/services/web-design/): Agent websites and landing pages built to book showings and valuations: fast, mobile-first, with booking, lead capture and instant follow-up built in.
+- [AI Chatbots](https://zynverix.com/services/ai-chatbots/): An AI chat assistant for your real estate website and Instagram/Facebook DMs that answers buyer questions 24/7, collects details and offers a showing time.
+- [Lead Management (AI Automation)](https://zynverix.com/services/lead-management/): Every Zillow, Facebook and website lead gets an instant reply, is sorted hot, warm or cold, is followed up and offered a showing time. Built for real estate agents.
+- [CRM Setup & Management](https://zynverix.com/services/crm-setup/): CRM setup and management for real estate agents: one clean pipeline with every lead, stage and task, connected to your follow-up, plus a weekly report.
+- [Full-Stack Marketing](https://zynverix.com/services/digital-marketing/): Social media, video, ads, website, AI chatbot, lead management and CRM, run as one plan for your real estate business.
 
 ## Company
+- [How it works](https://zynverix.com/how-it-works/): what happens to every lead, and how a project runs
+- [Live demo](https://zynverix.com/demo/real-estate/): try the lead response as a buyer
 - [About](https://zynverix.com/about/): who we are and how we work
-- [Team](https://zynverix.com/team/): the three partners
+- [Team](https://zynverix.com/team/): the three directors
+- [Projects](https://zynverix.com/projects/): demo builds, labeled as demos
+- [FAQ](https://zynverix.com/faq/): common questions
 - [Contact](https://zynverix.com/contact/): message form, email, free audit
 - [Privacy Policy](https://zynverix.com/privacy/)
+- [Terms of Service](https://zynverix.com/terms/)
