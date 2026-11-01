@@ -11,20 +11,29 @@ Redirect 301 /services.html https://zynverix.com/services/
 Redirect 301 /privacy.html https://zynverix.com/privacy/
 Redirect 301 /terms.html https://zynverix.com/terms/
 Redirect 301 /thank-you.html https://zynverix.com/thank-you/
-Redirect 301 /services/instant-reply.html https://zynverix.com/services/speed-to-lead/
-Redirect 301 /services/lead-qualification.html https://zynverix.com/services/lead-qualification/
-Redirect 301 /services/booking-reminders.html https://zynverix.com/services/appointment-booking-reminders/
-Redirect 301 /services/automated-follow-up.html https://zynverix.com/services/lead-follow-up/
+Redirect 301 /services/instant-reply.html https://zynverix.com/services/lead-management/
+Redirect 301 /services/lead-qualification.html https://zynverix.com/services/lead-management/
+Redirect 301 /services/booking-reminders.html https://zynverix.com/services/lead-management/
+Redirect 301 /services/automated-follow-up.html https://zynverix.com/services/lead-management/
 Redirect 301 /services/crm-pipeline.html https://zynverix.com/services/crm-setup/
-Redirect 301 /services/weekly-reporting.html https://zynverix.com/services/lead-reporting/
+Redirect 301 /services/weekly-reporting.html https://zynverix.com/services/crm-setup/
 Redirect 301 /services/lead-generation.html https://zynverix.com/services/facebook-instagram-ads/
 Redirect 301 /services/web-development.html https://zynverix.com/services/web-design/
-Redirect 301 /services/social-media-management.html https://zynverix.com/services/social-media-management/
+Redirect 301 /services/social-media-management.html https://zynverix.com/services/social-media-marketing/
 Redirect 301 /services/complete-marketing.html https://zynverix.com/services/digital-marketing/
-RedirectMatch 301 ^/services/instant-reply/$ https://zynverix.com/services/speed-to-lead/
 RedirectMatch 301 ^/services/complete-marketing/$ https://zynverix.com/services/digital-marketing/
 RedirectMatch 301 ^/services/full-stack-marketing/$ https://zynverix.com/services/digital-marketing/
-RedirectMatch 301 ^/who-we-help/$ https://zynverix.com/industries/
+RedirectMatch 301 ^/who-we-help/$ https://zynverix.com/services/
+RedirectMatch 301 ^/services/speed-to-lead/?$ https://zynverix.com/services/lead-management/
+RedirectMatch 301 ^/services/lead-qualification/?$ https://zynverix.com/services/lead-management/
+RedirectMatch 301 ^/services/appointment-booking-reminders/?$ https://zynverix.com/services/lead-management/
+RedirectMatch 301 ^/services/lead-follow-up/?$ https://zynverix.com/services/lead-management/
+RedirectMatch 301 ^/services/lead-reporting/?$ https://zynverix.com/services/crm-setup/
+RedirectMatch 301 ^/services/social-media-management/?$ https://zynverix.com/services/social-media-marketing/
+RedirectMatch 301 ^/services/instant-reply/?$ https://zynverix.com/services/lead-management/
+RedirectMatch 301 ^/industries/?$ https://zynverix.com/services/
+RedirectMatch 301 ^/industries/real-estate/?$ https://zynverix.com/
+RedirectMatch 301 ^/industries/.+$ https://zynverix.com/services/
 ErrorDocument 404 /404.html
 <IfModule mod_expires.c>
 ExpiresActive On
