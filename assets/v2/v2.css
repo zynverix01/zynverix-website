@@ -224,3 +224,28 @@ main,footer{position:relative;z-index:1}
 
 /* deeper blue behind the hero (sits under the floating building) */
 body{background:linear-gradient(180deg,#B3DAEC 0,#97C9E1 calc(100svh - 40px),#CFEAF4 calc(100svh + 260px),#D8F1F6 100%)}
+
+/* footer: same as the inner pages */
+.site-footer{background:#080E22;color:#A9BCD0;padding:56px 0 36px;border-top:1px solid rgba(148,163,184,.16);position:relative;z-index:2}
+.site-footer .container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+@media (min-width:768px){.site-footer .container{padding:0 32px}}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer h3,.site-footer p{margin:0}
+.footer-top{display:grid;gap:32px}
+@media (min-width:640px){.footer-top.footer-5{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.footer-top.footer-5{grid-template-columns:1.4fr 1fr 1fr .9fr 1fr}}
+.footer-top p{margin-top:14px;font-size:14.5px;max-width:340px}
+.footer-top h3{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#E2E8F0;font-weight:700;margin-bottom:14px}
+.footer-top ul{display:grid;gap:10px}
+.footer-top a{color:#A9BCD0;text-decoration:none;font-size:14.5px;display:inline-flex;align-items:center;gap:8px}
+.footer-top a:hover{color:var(--sand)}
+.site-footer .ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.brand-foot{display:inline-block}
+.brand-logo{width:150px;height:auto;filter:drop-shadow(0 10px 30px rgba(91,192,222,.25))}
+.site-footer .footer-cta{margin-top:18px;background:var(--amber);color:#0B132B;min-height:40px;padding:8px 16px;font-size:14px;border-radius:10px;display:inline-flex;align-items:center;font-weight:600;box-shadow:0 14px 30px -14px rgba(217,119,6,.8)}
+.site-footer .footer-cta:hover{color:#0B132B;background:#E58A12}
+.site-footer .socials{display:flex;gap:12px;justify-content:flex-start;margin-top:16px}
+.site-footer .socials a.soc{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;padding:0;gap:0;color:#CBD5E1;background:rgba(255,255,255,.05);border:1px solid rgba(148,163,184,.28);transition:color .2s,background .2s,border-color .2s,transform .2s}
+.site-footer .socials a.soc:hover{color:#fff;background:rgba(91,192,222,.22);border-color:var(--sky);transform:translateY(-2px)}
+.site-footer .soc svg{display:block;margin:0}
+.footer-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(148,163,184,.16);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px}
