@@ -249,3 +249,14 @@ body{background:linear-gradient(180deg,#B3DAEC 0,#97C9E1 calc(100svh - 40px),#CF
 .site-footer .socials a.soc:hover{color:#fff;background:rgba(91,192,222,.22);border-color:var(--sky);transform:translateY(-2px)}
 .site-footer .soc svg{display:block;margin:0}
 .footer-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(148,163,184,.16);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px}
+
+/* FAQ: dark cells closed, light blue when open */
+.faq details{background:#0B132B!important;border:1px solid #0B132B!important;border-radius:14px!important;transition:background .3s ease,border-color .3s ease}
+.faq details+details{margin-top:10px}
+.faq details summary{color:#fff!important}
+.faq details summary .tog,.faq details summary .ic{color:#fff!important;stroke:#fff}
+.faq details[open]{background:#EAF6FB!important;border-color:#9FD8EA!important}
+.faq details[open] summary{color:#0B132B!important}
+.faq details[open] summary .tog,.faq details[open] summary .ic{color:#0B132B!important;stroke:#0B132B}
+.faq details p,.faq details .ans,.faq details .ans p{color:#1C2541!important}
+.faq details summary::marker,.faq details summary::after{color:inherit}
